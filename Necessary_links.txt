@@ -1,5 +1,63 @@
-PROMPTS
+WEBSITES FOR PROMPTS
 ___________________________________________________
 1. AI FOR WORK
+2. https://www.smscountry.com/blog/ai-prompts-sms/
+
+
+
+REFERENCE WEBSITES
+
+1. wisdolia.in
+2. coursebox.ai
+3. https://codecanyon.net/item/ai-course-generator-text-to-course-saas-ai-video-image-content-payment-earn-gemini-react-admin/51342965
+
+
+Resources:-
+
+1. Google gemini 1.0, gpt4lora, open source models(indicbert, marianmt), langchain
+2. GitHub se code nikalna hai -> course generator, multilingual translation( ) ,  chatbot 
+3. Articles  -> Medium, etc. 
+4. Dialogflow, IBM Watson, chatbots 
+5. 
+
+
+STEPS:-
+
+1. User will upload a PDF.
+2. User will be allowed to select a language.
+3. User will be given options:-
+
+		1. Lesson Plan / Modules/ Flashcards
+		2. MCQ
+		3. Short Answer Questions
+		4. Fill in the blanks/  /  / / /  /
+		5. Chatbot
+		6. True and false
+		7. Descriptive ya long answer questions
+		8. 
+
+
+minimum 3 exercise questions
+1 lesson plan/ module/ flashcards
+AI Curriculum, AI assessment
+
+
+
+
+EXPERT RECOMMENDATION
+
+
+1. User retention period  -> 10 secs
+2. Processing time -> drastic reduction 
+3. Modularization 
+4. Time reduction 
+5. Prompt engineering
+6. Advanced Techniques
+7. Deployment level practices
+8. 
+9.
+10.
+11.
+12.
 
 
