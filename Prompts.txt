@@ -1,1 +1,24 @@
-
+def create_prompts(text):
+    return {
+        "mcq": (
+            f"Please read the following text carefully and create 10 multiple-choice questions that test the reader's deep comprehension and critical thinking skills. "
+            f"Each question should be designed to challenge the reader and cover various key points and concepts from the text. "
+            f"For each question, provide four distinct answer options labeled A, B, C, and D. Ensure that one of these options is clearly the correct answer, and the other three are plausible but incorrect options. "
+            f"After each question and its answer options, include the correct answer with a detailed explanation that not only clarifies why the correct answer is correct but also explains why the incorrect options are not suitable. "
+            f"Here is the text to base the questions on:\n\n{text}\n\nMultiple-Choice Questions:"
+        ),
+        "fill_in_the_blank": (
+            f"Please read the following text carefully and create 10 fill-in-the-blank questions that focus on the key terms, concepts, and important details from the text. "
+            f"Each question should be structured in a way that highlights a crucial part of the text and requires the reader to recall specific information to fill in the blank. "
+            f"After each question, provide the correct answer and a detailed explanation of its significance within the context of the text. "
+            f"Make sure the questions cover a wide range of topics and concepts from the text. "
+            f"Here is the text to base the questions on:\n\n{text}\n\nFill-in-the-Blank Questions:"
+        ),
+        "short_answer": (
+            f"Please read the following text carefully and create 10 short answer questions that require the reader to provide a brief but comprehensive response. "
+            f"Each question should be designed to test the reader's understanding and ability to articulate key concepts, details, and ideas from the text. "
+            f"After each question, provide the correct answer along with a detailed explanation that elaborates on the main points and contextual relevance. "
+            f"Ensure the questions cover various key points and concepts from the text. "
+            f"Here is the text to base the questions on:\n\n{text}\n\nShort Answer Questions:"
+        )
+    }
