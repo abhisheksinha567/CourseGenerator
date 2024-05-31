@@ -60,4 +60,50 @@ EXPERT RECOMMENDATION
 11.
 12.
 
+this function i found on chat gpt regarding asssessment and evaluation
+@app.route('/generate_assessment', methods=['POST'])
+def generate_assessment():
+    file = request.files['pdf']
+    text = extract_text_from_pdf(file)
+    text_chunks = split_text_into_chunks(text)
 
+    mcq_questions = []
+    fill_in_the_blank_questions = []
+    short_answer_questions = []
+
+    for chunk in text_chunks:
+        prompts = create_prompts(chunk)
+        mcq_questions.append(generate_questions(prompts['mcq']))
+        fill_in_the_blank_questions.append(generate_questions(prompts['fill_in_the_blank']))
+        short_answer_questions.append(generate_questions(prompts['short_answer']))
+
+    return jsonify({
+        'mcq_questions': mcq_questions,
+        'fill_in_the_blank_questions': fill_in_the_blank_questions,
+        'short_answer_questions': short_answer_questions
+    })
+
+@app.route('/evaluate_assessment', methods=['POST'])
+def evaluate_assessment():
+    user_answers = request.json.get('user_answers')
+    correct_answers = request.json.get('correct_answers')
+
+    evaluation = {
+        'mcq': {
+            'total': len(correct_answers['mcq']),
+            'correct': sum(1 for ua, ca in zip(user_answers['mcq'], correct_answers['mcq']) if ua == ca)
+        },
+        'fill_in_the_blank': {
+            'total': len(correct_answers['fill_in_the_blank']),
+            'correct': sum(1 for ua, ca in zip(user_answers['fill_in_the_blank'], correct_answers['fill_in_the_blank']) if ua == ca)
+        },
+        'short_answer': {
+            'total': len(correct_answers['short_answer']),
+            'correct': sum(1 for ua, ca in zip(user_answers['short_answer'], correct_answers['short_answer']) if ua.strip().lower() == ca.strip().lower())
+        }
+    }
+
+    return jsonify(evaluation)
+
+if __name__ == '__main__':
+    app.run(debug=True)
